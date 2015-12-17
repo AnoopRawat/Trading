@@ -1,0 +1,85 @@
+﻿<article class="container">
+    <div class="wrapper">
+        <div class="inner-container">
+            <span class="right-side-link"><img src="Content/images/right-section-link.png" /></span>
+            <div data-header-error-directive data-message-text="headerMessage.messageText" data-show-message="headerMessage.showMessage" data-message-type="headerMessage.messageType"></div>
+            <div class="login-top">
+                <h3>Register on Virtual Trading Platform</h3>
+                <div class="banner">
+                    <form id="RegisterForm" name="RegisterForm">
+                        <div class="login-credentials">
+                            <ul class="login-section">
+                                <li>
+                                    <div style="float:left;width:100%">
+                                        <label style="float:left;width:33%;margin-right:13px">First Name*</label>
+                                        <label style="float: left; margin-left: 8px">Last Name</label>
+                                        <input type="text" name="" data-ng-model="user.userFirstName" style="float:left;width:32%;margin-right:13px" required />
+                                        <input type="text" name="" data-ng-model="user.userLastName" style="float:left;width:32%" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <label>Email Id*</label>
+                                    <input type="email" data-ng-model="user.userCredentials.userId" required />
+                                </li>
+                                <li>
+                                    <label>Password*</label>
+                                    <input type="password" name="" data-ng-model="password.passwordOne" required />
+                                </li>
+                                <li>
+                                    <label>Confirm Password*</label>
+                                    <input type="password" name="" data-ng-model="password.passwordTwo" required />
+                                </li>
+
+                            </ul>
+                            <ul class="buttons">
+                                <li><input type="submit" id="loginUserSubmit" name="loginUserSubmit" value="Register" class="primary-button" data-ng-click="registerUser()" /></li>
+                            </ul>
+
+                        </div>
+                        <div class="help-section">
+                            <h6>May I Help You?</h6>
+                            <ul>
+                                <li class="new-user">
+                                    <a href="" data-ng-click="redirectLogin()">
+                                        <em></em>
+                                        <span>Registered user?</span>
+                                        <span><strong>Login Here</strong></span>
+                                    </a>
+                                </li>
+                                <li class="request-call">
+                                    <a href="javascript:void(0)">
+                                        <em></em>
+                                        <span>Request a call or call us</span>
+                                        <strong>800.999.6000</strong>
+                                    </a>
+                                </li>
+                                <li class="service">
+                                    <a href="javascript:void(0)">
+                                        <em></em>
+                                        <span>Any query or service request</span>
+                                    </a>
+                                </li>
+                                <li class="assistance">
+                                    <a href="javascript:void(0)">
+                                        <em></em>
+                                        <span>For any quick assistance do a Video Chat with us !</span>
+                                    </a>
+                                </li>
+                                <li class="faq">
+                                    <a href="javascript:void(0)">
+                                        <em></em>
+                                        <span>FAQs</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="important-info">
+            </div>
+
+        </div>
+    </div>
+</article>

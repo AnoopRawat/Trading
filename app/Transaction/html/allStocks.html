@@ -1,0 +1,38 @@
+﻿<div>
+    <div class="collapse-section">
+        <div ng-include src="'app/Common/html/templates/UserProfile.html'"></div>
+    </div>
+    <article class="container">
+        <div class="wrapper">
+            <a href="" style="text-decoration:underline" data-ng-click="openDashboard()">Goto Dashboard</a>
+            <div class="inner-container">
+                <span class="right-side-link"><img src="Content/images/right-section-link.png" /></span>
+                    <div class="left-section">
+                        <div class="main-column-outer">                            
+                            <div class="main-column">
+                                <div class="column top-performer all-stocks">
+                                    <div class="column-title">Stocks</div>
+                                    <ul class="stock-list">
+                                        <li ng-repeat="stock in stockData.stockData">
+                                            <span class="stock-index">{{$index + 1}}</span>
+                                            <span class="stock-name"><small>{{stock.symbol}}</small></span>
+                                            <span class="stock-value"><small>{{stock.lastTradedPrice}}</small></span>
+                                            <span class="nifty-change">
+                                                <span ng-class="stock.change < 0 ? 'nifty-arrow-down': 'nifty-arrow-up'"></span>
+                                                <span ng-class="stock.change < 0 ? 'loss': 'gain'">{{stock.change}}</span>
+                                            </span>
+                                            <span ng-class="stock.percentageChange < 0 ? 'nifty-change-percentage loss': 'nifty-change-percentage gain'">&nbsp;({{stock.percentageChange}}%)</span>
+                                            <!--<span class="stock-gain"><small>Change</small></span>-->
+                                            <button ng-class="stock.isActive === true ? 'sell-btn': 'sell-btn sell-btn-Disabled'" data-ng-click="buySellStock(stock, 'SELL')">Sell</button>
+                                            <button class="buy-btn" data-ng-click="buySellStock(stock, 'BUY')">Buy</button>
+                                        </li>
+                                    </ul>                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-include src="'app/Common/html/templates/Offers.html'"></div>
+            </div>
+        </div>
+    </article>
+</div>

@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-cloak>
+<head>
+    <meta charset="utf-8" />
+    <title>Trading</title>
+    <link href="../Content/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="Content/css/app.css" type="text/css" />
+    <script src="scripts/require.js" data-main="app/config"></script>
+    <link href="Content/fonts/font.css" rel="stylesheet" type="text/css" />
+    <link href="Content/css/jquery-ui-1.9.2.custom.css" rel="stylesheet" type="text/css" />
+    <link href="Content/css/style.css" rel="stylesheet" />
+    <link href="Content/css/font-awesome.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="Content/images/trading.ico">
+   
+</head>
+<body>
+    <script>
+        document.onkeydown = fkey;
+        document.onkeypress = fkey
+        document.onkeyup = fkey;
+        document.onmousedown = disableclick;
+
+        function fkey(e) {
+
+            e = e || window.event;
+            // on F5 or CTRL+R  logout
+            if ((e.keyCode === 116 && e.charCode === 0) || (event.ctrlKey && e.keyCode === 82)) {
+                if (localStorage.getItem('isLogedIn') !== null) {
+                    alert('Refresh not allowed. Logging out from application');
+                    localStorage.clear();
+                    window.location.hash = "/#";
+                }
+            }
+        }
+        status = "Right click not allowed";
+        function disableclick(event) {
+            if (event.button == 2) {
+                if (localStorage.getItem('isLogedIn') !== null) {
+                    alert(status);
+                    event.preventDefault();
+                    return false;
+                }
+            }
+        }
+
+        // redirect to current state in SPA
+        if (window.onpopstate != undefined) {
+            window.onpopstate = function (e) {
+                if (localStorage.getItem('isLogedIn') !== null) {
+                    window.history.forward(1);
+                }
+            }
+        } else {
+            // for IE
+            window.onhashchange = function (e) {
+                if (localStorage.getItem('isLogedIn') !== null) {
+                    window.history.forward(1);
+                }
+            }
+        }
+
+        window.onload = function (e) {
+            if (localStorage.getItem('isLogedIn') !== null) {
+                localStorage.clear();
+            }
+        }
+
+    </script>
+
+    <!-- social icon -->
+    <ul class="social-icon">
+        <li class="facebook"><a href="javascript:void(0)">Facebook</a></li>
+        <li class="twitter"><a href="javascript:void(0)">Twitter</a></li>
+        <li class="linked-in"><a href="javascript:void(0)">Linkedin</a></li>
+        <li class="chat"><a href="javascript:void(0)">Chat</a></li>
+        <li class="video-chat"><a href="javascript:void(0)">Video Chat</a></li>
+    </ul>
+    <!-- header starts here -->
+    <header>
+        <section class="header">
+            <div class="wrapper">
+                <a href="javascript:void(0)" class="logo"><img src="Content/images/logo_nagarro.jpg" alt="logo" title="Nagarro Online Trading" style="width:200px;height:40px" /></a>
+                <div class="right-header">                   
+                    <nav data-ng-show="isAuthenticated">
+                        <span class="menu-link"></span>
+                        <ul class="menu-login">
+                            <li><a href="javascript:void(0)" ng-click="menuNavigation('Dashboard')">Dashboard</a></li>                            
+                            <li class="last"><input type="text" class="search-txt" name="" placeholder="Search..."> </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </header>
+    <div id="content" ng-view></div>
+    <!-- container ends here -->
+    <!-- footer start here -->
+    <footer>
+        <section class="footer">
+            <article class="wrapper">
+                <ul class="footer-links">
+                    <li><a href="javascript:void(0)">About Us</a></li>
+                    <li><a href="javascript:void(0)">Email Us</a></li>
+                    <li><a href="javascript:void(0)">24 X 7 Customer Care</a></li>
+                    <li><a href="javascript:void(0)">Help</a></li>
+                </ul>
+                <div class="footer-logo">
+                    <figure><img src="Content/images/footer-logo.png" alt="footer-logo" title="footer-logo" /></figure>
+                    <span>© Nagarro Virtual Trading Platform</span>
+                </div>
+            </article>
+        </section>
+    </footer>
+</body>
+</html>

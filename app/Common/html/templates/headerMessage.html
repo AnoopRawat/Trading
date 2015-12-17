@@ -1,0 +1,7 @@
+﻿
+<div class="header-msg-container">
+    <div data-ng-show="showMessage && messageType > 0" data-ng-class="messageType === 1 ? 'header-error-message' : (messageType===2) ? 'header-success-message' : 'header-note-message'">
+        <i class="fa fa-times-circle" data-ng-click="closeMessage()"></i>
+        <span style="margin-left:10px">{{messageText}}</span>
+    </div>
+</div>

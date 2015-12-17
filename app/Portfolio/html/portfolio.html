@@ -1,0 +1,66 @@
+﻿<div>
+    <div class="collapse-section">
+        <div ng-include="'app/Common/html/templates/UserProfile.html'"></div>
+    </div>
+    <article class="container">
+        <div class="wrapper">
+            <a href="" style="text-decoration:underline" data-ng-click="gotoDashboard()">Goto Dashboard</a>
+            <a href="" style="text-decoration:underline" data-ng-click="gotoProfitAndLoss()">Goto P & L Statement</a>
+            <div class="inner-container">
+                <div class="left-section portfolio-page">
+                    <div class="module-title">Portfolio</div>
+                    <div class="column dashboard portfolio-summary">
+                        <ul>
+                            <li>
+                                <span class="balance-type">Available Balance:</span>
+                                <span class="balance">Rs {{summaryData.availableBal}}</span>
+                            </li>
+                            <li>
+                                <span class="balance-type">Net-worth:</span>
+                                <span class="balance">Rs {{summaryData.netWorth}}</span>
+                            </li>
+                            <li>
+                                <span class="balance-type">Traded Amount:</span>
+                                <span class="balance">Rs {{summaryData.tradedValue}}</span>
+                            </li>
+                            <li>
+                                <span class="balance-type">Asset Value:</span>
+                                <span class="balance">Rs {{summaryData.totalAssetValue}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul style="margin: 100px 0 50px 0" ng-show="false">
+                        <li class="gain">
+                            <span class="balance-type">Gain:</span>
+                            <span class="balance">Rs 5,000 (+12.5%)</span>
+                        </li>
+                    </ul>
+                    <table class="hide-section finance-table">
+                        <tr>
+                            <th>Stock Name</th>
+                            <th>Quantity</th>
+                            <th>Avg. Traded Price</th>
+                            <th>Avg. Traded Asset Value</th>
+                            <th>Current Price</th>
+                            <th>Current Asset Value</th>
+                            <th>Change Since Trade (%)</th>
+                            <th>Change Since Closed (%)</th>
+                        </tr>
+                        <tr ng-repeat="data in stockData">
+                            <td>{{ data.stockName}}</td>
+                            <td>{{ data.totalStockQuantity }}</td>
+                            <td>{{ data.avgTradedStockPrice }}</td>
+                            <td>{{ data.avgTradedStockTotalValue }}</td>
+                            <td>{{ data.currentStockPrice }}</td>
+                            <td>{{ data.currentAssetValue }}</td>
+                            <td ng-class="data.avgChangeInPrice < 0 ? 'loss': 'gain'">{{data.avgChangeInPrice}} ({{data.avgChangePercentage}}%)</td>
+                            <td ng-class="data.ltpStockChange < 0 ? 'loss': 'gain'">{{data.ltpStockChange}} ({{data.ltpStockPercentage}}%)</td>
+                        </tr>
+                    </table>
+                </div>
+                <div ng-include="'app/Common/html/templates/Offers.html'"></div>
+            </div>
+
+        </div>
+    </article>
+</div>

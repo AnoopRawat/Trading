@@ -1,0 +1,93 @@
+﻿<!-- container starts here -->
+<article class="container">
+    <div class="wrapper">
+        <div class="inner-container">
+            <span class="right-side-link"><img src="Content/images/right-section-link.png" /></span>
+            <div data-header-error-directive data-show-message="headerMessage.showMessage" data-message-text="headerMessage.messageText " data-message-type="headerMessage.messageType"></div>
+            <div class="login-top">
+                <h3>Login to Virtual On-line Trading</h3>
+                <form id="LoginForm" name="LoginForm">
+                    <div class="banner">
+                        <div class="login-credentials">
+                            <ul class="login-section">
+                                <li>
+                                    <label>User ID</label>
+                                    <input type="text" name="" data-ng-model="userCredentials.userId" required />
+                                </li>
+                                <li>
+                                    <label>Password</label>
+                                    <input type="password" name="" data-ng-model="password" required />
+                                    <!--<span class="key-board"><img src="Content/images/key-board.png" alt="key-board" title="key-board" /></span>-->
+                                </li>
+                                <li>
+                                    <label>Start Page</label>
+                                    <select ng-model="startPage" ng-options="item for item in startSelect">
+                                        <option>{{item}}</option>
+                                    </select>
+                                </li>
+                            </ul>
+                            <ul class="buttons">
+                                <li><input type="submit" id="loginUserSubmit" name="loginUserSubmit" value="Login" class="primary-button" data-ng-click="login()" /></li>
+                            </ul>
+                            <a href="javascript:void(0)" class="forgot-link" ng-click="toggleModal()"><strong>Forgot Password</strong></a>
+                        </div>
+                        <div class="help-section">
+                            <h6>May I Help You?</h6>
+                            <ul>
+                                <li class="new-user">
+                                    <a href="" data-ng-click="redirectRegister()">
+                                        <em></em>
+                                        <span>New user?</span>
+                                        <span><strong>Get User ID</strong></span>
+                                    </a>
+                                </li>
+                                <li class="request-call">
+                                    <a href="javascript:void(0)">
+                                        <em></em>
+                                        <span>Request a call or call us</span>
+                                        <strong>800.999.6000</strong>
+                                    </a>
+                                </li>
+                                <li class="service">
+                                    <a href="javascript:void(0)">
+                                        <em></em>
+                                        <span>Any query or service request</span>
+                                    </a>
+                                </li>
+                                <li class="assistance">
+                                    <a href="javascript:void(0)">
+                                        <em></em>
+                                        <span>For any quick assistance do a Video Chat with us !</span>
+                                    </a>
+                                </li>
+                                <li class="faq">
+                                    <a href="javascript:void(0)">
+                                        <em></em>
+                                        <span>FAQs</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="important-info">
+                <h3>Important Informations</h3>
+                <strong>Welcome to the world of simulated trading</strong>
+                <p>
+                    You have Rs 1 Crore virtual cash for investing in stocks. Please login or register to start trading now. We wish you all the best! <br /> Lets Play ...
+                </p>
+                <strong>Confidential Information Security</strong>
+                <p>
+                    Please be aware of suspicious emails and websites that attempt to get your confidential information. We never send you an email or call you or use any other means requesting for confidential trading account information such as user names and passwords (including the One Time Passwords)
+                </p>
+                <strong>Digital Security</strong>
+                <p>Your On-line trading site has been verified by VeriSign. The communication of your private information from any address beginning with "https" is encrypted and secured using SSL</p>
+            </div>
+        </div>
+    </div>
+</article>
+
+<div id="incorrectLogin" style="display:none;border:solid">
+    <strong>Wrong user name or password</strong>
+</div>

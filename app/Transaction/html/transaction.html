@@ -1,0 +1,115 @@
+﻿<div>
+    <div class="collapse-section">
+        <div ng-include src="'app/Common/html/templates/UserProfile.html'"></div>
+    </div>
+    <article class="container">
+
+        <div class="wrapper">
+            <div data-header-error-directive data-show-message="headerMessage.showMessage" data-message-text="headerMessage.messageText " data-message-type="headerMessage.messageType"></div>
+            <a href="" style="text-decoration:underline" data-ng-click="gotoDashboard()">Goto Dashboard</a>
+            <div class="inner-container">
+                <div class="info left-section" id="AS-NSE" style="display: block;">
+                    <div class="module-title">Transaction</div>
+                    <div class="column dashboard portfolio-summary">
+                        <ul>
+                            <li>
+                                <span class="balance-type">Available Balance:</span>
+                                <span class="balance">Rs {{summaryData.availableBal}}</span>
+                            </li>
+                            <li>
+                                <span class="balance-type">Net-worth:</span>
+                                <span class="balance">Rs {{summaryData.netWorth}}</span>
+                            </li>
+                            <li>
+                                <span class="balance-type">Traded Amount:</span>
+                                <span class="balance">Rs {{summaryData.tradedValue}}</span>
+                            </li>
+                            <li>
+                                <span class="balance-type">Asset Value:</span>
+                                <span class="balance">Rs {{summaryData.totalAssetValue}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul style="margin: 100px 0 50px 0" ng-show="false">
+                        <li class="gain">
+                            <span class="balance-type">Gain:</span>
+                            <span class="balance">Rs 5,000 (+12.5%)</span>
+                        </li>
+                    </ul>
+                    <div class="highlighted-container">
+                        <div class="top-section PB10">
+                            <div>
+                                <div class="b_26 FL stk_name">
+                                    <span class="nifty-index">{{stockData.symbol}}</span>
+
+                                </div>
+
+                                <div class="CL"></div>
+                            </div>
+                            <div>
+                                <div class="MT5 w300 FL">
+                                    <div>
+                                        <ul>
+                                            <li>
+
+                                                <span class="nifty-change">
+                                                    <span class="nav b_16 stk_price">{{stockData.lastTradedPrice}}</span>
+                                                    <span ng-class="stockData.change < 0 ? 'nifty-arrow-down': 'nifty-arrow-up'"></span>
+                                                    <span ng-class="stockData.change < 0 ? 'loss': 'gain'">{{stockData.change}}</span>
+                                                </span>
+                                                <span ng-class="stockData.percentageChange < 0 ? 'nifty-change-percentage loss': 'nifty-change-percentage gain'">({{stockData.percentageChange}}%)</span>
+                                                <span class="f_gray stk_vol"> Volume: {{stockData.tradedVolumeInLakh * 100 | number :2}}k</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="MT10 b_12 f_gray">
+                                        <span class="FL b33_10 stk_time">{{refreshDate | date:'medium'}} IST </span>
+                                    </div>
+                                </div>
+
+                                <div class="CL"></div>
+                            </div>
+                        </div>
+                        <div class="CL"></div>
+                        <div class="brd-dtd-top Dnone stockBuy PB10 PT20" style="display: block;">
+                            <div class="form-data MT10 MB20">
+                                <div class="form-row">
+                                    <div class="form-element FL W80" id="quantity">
+                                        <div class="lbl MB5"><span class="b_12 FL">Quantity</span></div>
+                                        <input type="number" data-ng-model="qty" require class="orderQty custom_input_nrml" id="Quantity" ng-blur="calculateTotalAmt()">
+                                        <!-- <input type="number"  data-number-only-input data-input-value="qty" data-ng-model="qty" data-input-name="Quantity" class="orderQty custom_input_nrml" ng-blur="calculateTotalAmt()">-->
+                                        <div class="CL">
+
+                                        </div>
+                                    </div>
+                                    <div class="form-element FL  MT30 darkgray_12">@</div>
+                                    <div class="form-element FL W105" id="price">
+                                        <div class="lbl MB5">
+                                            <span class="b_12 FL">Price</span><span class="ttip FL"></span>
+                                        </div>
+                                        <div class="form-element FL W69 ML10">
+                                            <input type="text" id="txt_mktprice" class="orderQty custom_input_nrml" readonly="readonly" ng-model="stockData.lastTradedPrice">
+                                        </div>
+                                    </div>
+
+                                    <div class="FL MT30 darkgray_12 form-element">=</div><div class="form-element FL W95">
+                                        <div class="lbl MB5"><span class="b_12">Investment Amt.</span></div>
+                                        <input type="text" class="orderQty custom_input_nrml" readonly="" id="totalAmount" ng-model="totalAmt">
+                                    </div>
+                                    <div class="FR MT15">
+                                        <button type="submit" class="buysellbtn FL MR5 selectedbtn" style="cursor:pointer" data-ng-click="confirmTransaction()">Done</button>
+                                        <!--<button type="submit" style="cursor:not-allowed" data-ng-click="buySellStock()" id="stocksellBtn" class="buysellbtn FL MR5">Sell</button>-->
+                                        <div class="CL">
+                                        </div>
+                                        <a href="" class="transaction-history-link" style="text-decoration:underline" data-ng-click="gotoTransactionHistory()">Transaction History</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-include src="'app/Common/html/templates/Offers.html'"></div>
+            </div>
+        </div>
+    </article>
+</div>

@@ -1,0 +1,37 @@
+C:\Users\anooprawat\Documents\Visual Studio 2013\Projects\SimpleTodo\SimpleTodo\bin\Trading.dll.config
+C:\Users\anooprawat\Documents\Visual Studio 2013\Projects\SimpleTodo\SimpleTodo\bin\Trading.dll
+C:\Users\anooprawat\Documents\Visual Studio 2013\Projects\SimpleTodo\SimpleTodo\bin\Trading.pdb
+C:\Users\anooprawat\Documents\Visual Studio 2013\Projects\SimpleTodo\SimpleTodo\bin\Antlr3.Runtime.dll
+C:\Users\anooprawat\Documents\Visual Studio 2013\Projects\SimpleTodo\SimpleTodo\bin\Newtonsoft.Json.dll
+C:\Users\anooprawat\Documents\Visual Studio 2013\Projects\SimpleTodo\SimpleTodo\bin\Antlr3.Runtime.pdb
+C:\Users\anooprawat\Documents\Visual Studio 2013\Projects\SimpleTodo\SimpleTodo\bin\Newtonsoft.Json.xml
+C:\Users\anooprawat\Documents\Visual Studio 2013\Projects\SimpleTodo\SimpleTodo\obj\Debug\Trading.dll
+C:\Users\anooprawat\Documents\Visual Studio 2013\Projects\SimpleTodo\SimpleTodo\obj\Debug\Trading.pdb
+E:\SVN\Trading\Trading\Trading\bin\Trading.dll.config
+E:\SVN\Trading\Trading\Trading\bin\Trading.dll
+E:\SVN\Trading\Trading\Trading\bin\Trading.pdb
+E:\SVN\Trading\Trading\Trading\bin\Antlr3.Runtime.dll
+E:\SVN\Trading\Trading\Trading\bin\Newtonsoft.Json.dll
+E:\SVN\Trading\Trading\Trading\bin\Antlr3.Runtime.pdb
+E:\SVN\Trading\Trading\Trading\bin\Newtonsoft.Json.xml
+E:\SVN\Trading\Trading\Trading\obj\Debug\Trading.dll
+E:\SVN\Trading\Trading\Trading\obj\Debug\Trading.pdb
+E:\SVN\Online Trading\TradingPlatform_FrontEndCodeBase\Trading\bin\Trading.dll.config
+E:\SVN\Online Trading\TradingPlatform_FrontEndCodeBase\Trading\bin\Trading.dll
+E:\SVN\Online Trading\TradingPlatform_FrontEndCodeBase\Trading\bin\Trading.pdb
+E:\SVN\Online Trading\TradingPlatform_FrontEndCodeBase\Trading\bin\Antlr3.Runtime.dll
+E:\SVN\Online Trading\TradingPlatform_FrontEndCodeBase\Trading\bin\Newtonsoft.Json.dll
+E:\SVN\Online Trading\TradingPlatform_FrontEndCodeBase\Trading\bin\Antlr3.Runtime.pdb
+E:\SVN\Online Trading\TradingPlatform_FrontEndCodeBase\Trading\bin\Newtonsoft.Json.xml
+E:\SVN\Online Trading\TradingPlatform_FrontEndCodeBase\Trading\obj\Debug\Trading.dll
+E:\SVN\Online Trading\TradingPlatform_FrontEndCodeBase\Trading\obj\Debug\Trading.pdb
+E:\SVN\Online Trading\TradingPlatform_FrontEndCodeBase\Trading\obj\Debug\Trading.csprojResolveAssemblyReference.cache
+F:\trading_platform\TradingPlatform_FrontEndCodeBase\Trading\bin\Trading.dll.config
+F:\trading_platform\TradingPlatform_FrontEndCodeBase\Trading\bin\Trading.dll
+F:\trading_platform\TradingPlatform_FrontEndCodeBase\Trading\bin\Trading.pdb
+F:\trading_platform\TradingPlatform_FrontEndCodeBase\Trading\bin\Antlr3.Runtime.dll
+F:\trading_platform\TradingPlatform_FrontEndCodeBase\Trading\bin\Newtonsoft.Json.dll
+F:\trading_platform\TradingPlatform_FrontEndCodeBase\Trading\bin\Antlr3.Runtime.pdb
+F:\trading_platform\TradingPlatform_FrontEndCodeBase\Trading\bin\Newtonsoft.Json.xml
+F:\trading_platform\TradingPlatform_FrontEndCodeBase\Trading\obj\Debug\Trading.dll
+F:\trading_platform\TradingPlatform_FrontEndCodeBase\Trading\obj\Debug\Trading.pdb

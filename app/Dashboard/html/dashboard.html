@@ -1,0 +1,131 @@
+﻿<div>
+    <div class="collapse-section">
+        <div ng-include src="'app/Common/html/templates/UserProfile.html'"></div>
+    </div>
+
+    <article class="container">
+        <div class="wrapper">
+            <div class="inner-container">
+                <span class="right-side-link"><img src="Content/images/right-section-link.png" /></span>
+                <aside>
+                    <div class="left-section">
+                        <div class="main-column-outer">
+                            <div class="main-column">
+                                <div class="column dashboard">
+                                    <div class="column-title">Summary</div>
+                                    <ul>
+                                        <li>
+                                            <span class="balance-type">Available Balance:</span>
+                                            <span class="balance">Rs {{summaryData.availableBal}}</span>
+                                        </li>
+                                        <li>
+                                            <span class="balance-type">Net-worth:</span>
+                                            <span class="balance">Rs {{summaryData.netWorth}}</span>
+                                        </li>
+                                        <li>
+                                            <span class="balance-type">Traded Amount:</span>
+                                            <span class="balance">Rs {{summaryData.tradedValue}}</span>
+                                        </li>
+                                        <li>
+                                            <span class="balance-type">Asset Value:</span>
+                                            <span class="balance">Rs {{summaryData.totalAssetValue}}</span>
+                                        </li>
+                                    </ul>
+                                    <ul style="margin: 100px 0 50px 0" ng-show="false">
+                                        <li class="gain">
+                                            <span class="balance-type">Gain:</span>
+                                            <span class="balance">Rs 5,000 (+12.5%)</span>
+                                        </li>
+                                    </ul>
+
+                                    <span class="general-bottom-link top-link" data-ng-click="gotoTransactionHistory()">Transaction History</span>
+
+                                    <span class="general-bottom-link" data-ng-click="openPortfolio()">See Portfolio</span>
+
+                                </div>
+                                <div class="column players">
+                                    <div class="column-title">Leaderboard</div>
+                                    <ul>
+                                        <li>
+                                            <span class="serial-no">1</span>
+                                            <figure class="profile-pic"> <img title="profile-pic" alt="profile-pic" src="Content/images/offer-3.png"> </figure>
+                                            <div class="name"><span>John Smith</span><span>Score: 5000</span></div>
+
+                                        </li>
+                                        <li>
+                                            <span class="serial-no">2</span>
+                                            <figure class="profile-pic"> <img title="profile-pic" alt="profile-pic" src="Content/images/profile-pic.png"> </figure>
+                                            <div class="name"><span>James</span><span>Score: 4700</span></div>
+
+                                        </li>
+                                        <li>
+                                            <span class="serial-no">3</span>
+                                            <figure class="profile-pic"> <img title="profile-pic" alt="profile-pic" src="Content/images/profile12.jpg"> </figure>
+                                            <div class="name"><span>David</span><span>Score: 4100</span></div>
+
+                                        </li>
+
+                                    </ul>
+                                    <span class="general-bottom-link">See All Players</span>
+                                </div>
+                            </div>
+                            <div class="main-column">
+                                <div class="column nifty">
+                                    <div class="column-title">CNX NIFTY</div>
+                                    <ul>
+                                        <li>
+                                            <span class="nifty-title">NSE: NIFTY - {{refreshDate | date:'medium'}} IST </span>
+                                        </li>
+                                        <li>
+                                            <span class="nifty-index">{{stockData.nseIndexData[0].lastTradePrice}}</span>
+                                            <span class="nifty-change">
+                                                <span ng-class="stockData.nseIndexData[0].change < 0 ? 'nifty-arrow-down': 'nifty-arrow-up'"></span>
+                                                <span ng-class="stockData.nseIndexData[0].change < 0 ? 'loss': 'gain'">{{stockData.nseIndexData[0].change}}</span>
+                                            </span>
+                                            <span ng-class="stockData.nseIndexData[0].change < 0 ? 'nifty-change-percentage loss': 'nifty-change-percentage gain'">{{stockData.nseIndexData[0].percentageChange}}%</span>
+                                        </li>
+                                        <li>
+                                            <span class="nifty-change">Open<br />{{stockData.nseIndexData[0].open}}</span>
+                                            <span class="nifty-change">High<br />{{stockData.nseIndexData[0].high}}</span>
+                                            <span class="nifty-change">Low <br />{{stockData.nseIndexData[0].low}}</span>
+
+                                        </li>
+                                    </ul>
+                                    <span class="general-bottom-link">See Trend</span>
+                                </div>
+                                <div class="column top-performer">
+                                    <div class="column-title">Top Stocks</div>
+                                    <ul class="stock-list">
+                                        <li ng-repeat="stock in stockData.stockData |orderBy:'-percentageChange' | limitTo:5">
+                                            <span class="stock-index">{{$index + 1}}</span>
+                                            <span class="stock-name"><small>{{stock.symbol}}</small></span>
+                                            <span class="stock-value"><small>{{stock.lastTradedPrice}}</small></span>
+                                            <span class="nifty-change">
+                                                <span ng-class="stock.change < 0 ? 'nifty-arrow-down': 'nifty-arrow-up'"></span>
+                                                <span ng-class="stock.change < 0 ? 'loss': 'gain'">{{stock.change}}</span>
+                                            </span>
+                                            <span ng-class="stockData.percentageChange < 0 ? 'nifty-change-percentage loss': 'nifty-change-percentage gain'">&nbsp;({{stock.percentageChange}}%)</span>
+                                            <button ng-class="stock.isActive === true ? 'sell-btn': 'sell-btn sell-btn-Disabled'" data-ng-click="buySellStock(stock, 'SELL')">Sell</button>
+                                            <button class="buy-btn" data-ng-click="buySellStock(stock, 'BUY')">Buy</button>
+                                        </li>
+                                    </ul>
+
+                                    <span class="general-bottom-link" data-ng-click="seeAllStocks()">See All Stocks</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent-transaction-section">
+                            <div class="recent-transaction-title">Recent Transactions <a class="refresh-transaction-link" title="Refresh user transactions" data-ng-click="getRecentTransactions()"><i class="fa fa-refresh"></i></a></div>
+                            <ul ng-show="recentTransactions.length > 0">
+                                <li ng-repeat="unit in recentTransactions  track by $index">{{$index+1}}. {{unit}}</li>
+                            </ul>
+                            <label ng-show="recentTransactions.length < 1"> No recent transaction data found</label>
+                        </div>
+                    </div>
+                    <div ng-include src="'app/Common/html/templates/Offers.html'"></div>
+                </aside>
+            </div>
+            <!-- right section ends here -->
+        </div>
+    </article>
+</div>
